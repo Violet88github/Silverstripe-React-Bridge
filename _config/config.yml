@@ -1,1 +1,6 @@
-# see https://docs.silverstripe.org/en/developer_guides/configuration/configuration/
+---
+Name: SilverstripeReactBridge
+---
+SilverStripe\Admin\LeftAndMain:
+  extra_requirements_javascript:
+    - "violet88/silverstripe-react-bridge:client/dist/js/bundle.js"
