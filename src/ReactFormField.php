@@ -13,12 +13,12 @@ class ReactFormField extends FormField
     public function __construct($name, $reactComponent, $title = null, $value = null)
     {
         $this->reactComponent = $reactComponent;
+        $this->setAttribute('data-react-component', $reactComponent);
         parent::__construct($name, $title, $value);
     }
 
     public function Field($properties = [])
     {
-        $this->setAttribute('data-react-component', $this->reactComponent);
         $this->setAttribute('data-state', json_encode($this->getSchemaData()));
         return parent::Field($properties);
 
