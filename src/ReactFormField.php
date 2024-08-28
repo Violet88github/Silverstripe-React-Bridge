@@ -4,7 +4,7 @@ namespace Violet88\SilverstripeReactBridge;
 
 use SilverStripe\Forms\FormField;
 
-abstract class ReactFormField extends FormField
+class ReactFormField extends FormField
 {
     protected $schemaComponent = 'FormField';
 
