@@ -19,7 +19,10 @@ class ReactFormField extends FormField
 
     public function Field($properties = [])
     {
-        $this->setAttribute('data-state', json_encode($this->getSchemaData()));
+        $this->setAttribute('data-state', json_encode([
+            ...$this->getSchemaData(),
+            'value' => $this->Value(),
+        ]));
         return parent::Field($properties);
 
     }
