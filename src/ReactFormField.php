@@ -8,6 +8,8 @@ class ReactFormField extends FormField
 {
     protected $schemaComponent = 'FormField';
 
+    private $additionalSchemaData = [];
+
     protected $reactComponent;
 
     public function __construct($name, $reactComponent, $title = null, $value = null)
@@ -22,6 +24,7 @@ class ReactFormField extends FormField
         $this->setAttribute('data-state', json_encode([
             ...$this->getSchemaData(),
             'value' => $this->Value(),
+            ...$this->additionalSchemaData,
         ]));
         return parent::Field($properties);
 
@@ -46,5 +49,11 @@ class ReactFormField extends FormField
                 'schemaComponent' => $this->getSchemaComponent(),
             ]
         );
+    }
+
+    public function addToSchemaData($key, $value)
+    {
+        $this->additionalSchemaData[$key] = $value;
+        return $this;
     }
 }
