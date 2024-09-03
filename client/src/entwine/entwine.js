@@ -29,10 +29,6 @@ import ReactDOM from 'react-dom';
               console.log('Setting value for field', fieldName, value);
 
               input.value = value;
-
-              // Trigger a change event to notify the CMS that the field has been updated
-              const event = new Event('change', { bubbles: true });
-              input.dispatchEvent(event);
             };
 
             ReactDOM.render(<Component {...schemaState} onAutofill={setValue}/>, this[0]);
